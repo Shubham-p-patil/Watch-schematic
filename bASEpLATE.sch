@@ -4885,10 +4885,8 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <part name="RTC" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA05-1" device=""/>
 <part name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED" device="-3MM-NO_SILK"/>
 <part name="U1" library="_hhn_78xx_79xx_NCV78xx_d2pak_dpak" deviceset="MC78*" device="D2T" technology="05B"/>
-<part name="S1" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="31-XX" device=""/>
 <part name="IC2" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" technology="LM"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" value="100"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7"/>
 <part name="S3" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="31-XX" device=""/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7"/>
 <part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="ZTE" device=""/>
@@ -4896,6 +4894,8 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7"/>
 <part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device=""/>
+<part name="S1" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="31-XX" device=""/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7"/>
 </parts>
 <sheets>
 <sheet>
@@ -4907,17 +4907,17 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <instance part="RTC" gate="G$1" x="137.16" y="114.3"/>
 <instance part="D1" gate="G$1" x="193.04" y="86.36" rot="R90"/>
 <instance part="U1" gate="G$1" x="109.22" y="43.18"/>
-<instance part="S1" gate="1" x="106.68" y="91.44" rot="R270"/>
 <instance part="IC2" gate="A" x="177.8" y="86.36"/>
 <instance part="R1" gate="G$1" x="203.2" y="78.74" rot="R90"/>
-<instance part="R2" gate="G$1" x="93.98" y="83.82" rot="R90"/>
 <instance part="S3" gate="1" x="109.22" y="119.38" rot="R270"/>
-<instance part="R4" gate="G$1" x="119.38" y="114.3" rot="R180"/>
+<instance part="R4" gate="G$1" x="119.38" y="114.3" rot="R90"/>
 <instance part="D3" gate="1" x="157.48" y="86.36" rot="R90"/>
 <instance part="R3" gate="G$1" x="157.48" y="96.52" rot="R90"/>
 <instance part="R5" gate="G$1" x="147.32" y="81.28" rot="R90"/>
 <instance part="R6" gate="G$1" x="147.32" y="68.58" rot="R270"/>
 <instance part="SV1" gate="G$1" x="66.04" y="43.18" rot="R90"/>
+<instance part="S1" gate="1" x="109.22" y="86.36" rot="R270"/>
+<instance part="R2" gate="G$1" x="119.38" y="81.28" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -4931,7 +4931,8 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <segment>
 <pinref part="S3" gate="1" pin="S"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="114.3" y1="119.38" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="119.38" x2="119.38" y2="119.38" width="0.1524" layer="91"/>
+<label x="119.38" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="B4" class="0">
@@ -4941,11 +4942,10 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <label x="63.5" y="106.68" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="S1" gate="1" pin="S"/>
-<wire x1="93.98" y1="88.9" x2="111.76" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="88.9" x2="111.76" y2="91.44" width="0.1524" layer="91"/>
-<label x="106.68" y="86.36" size="1.778" layer="95"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="114.3" y1="86.36" x2="119.38" y2="86.36" width="0.1524" layer="91"/>
+<label x="116.84" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="B3" class="0">
@@ -5033,13 +5033,14 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <label x="152.4" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="78.74" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
-<label x="91.44" y="73.66" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="109.22" x2="119.38" y2="104.14" width="0.1524" layer="91"/>
+<label x="116.84" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="124.46" y1="114.3" x2="124.46" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="76.2" x2="119.38" y2="71.12" width="0.1524" layer="91"/>
+<label x="116.84" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VIN" class="0">
@@ -5051,6 +5052,7 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <segment>
 <pinref part="SV1" gate="G$1" pin="1"/>
 <wire x1="68.58" y1="50.8" x2="68.58" y2="55.88" width="0.1524" layer="91"/>
+<label x="68.58" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5097,16 +5099,17 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <segment>
 <pinref part="SV1" gate="G$1" pin="3"/>
 <wire x1="63.5" y1="50.8" x2="63.5" y2="55.88" width="0.1524" layer="91"/>
+<label x="58.42" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="S3" gate="1" pin="P"/>
-<wire x1="104.14" y1="119.38" x2="104.14" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="119.38" x2="99.06" y2="119.38" width="0.1524" layer="91"/>
+<label x="93.98" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="S1" gate="1" pin="P"/>
-<wire x1="101.6" y1="91.44" x2="96.52" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="91.44" x2="96.52" y2="96.52" width="0.1524" layer="91"/>
-<label x="93.98" y="96.52" size="1.778" layer="95"/>
+<wire x1="104.14" y1="86.36" x2="99.06" y2="86.36" width="0.1524" layer="91"/>
+<label x="93.98" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$3" class="0">
